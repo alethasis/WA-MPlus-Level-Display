@@ -48,8 +48,9 @@ function (allstates, event, ...)
     end
 
     if (event == "HIDE_DUNGEON_LEVELS") then
-        for mapID, abbreviation in pairs(aura_env.mapIDs) do
-            allstates[mapID] = {show = false, changed = true}
+        for _, state in pairs(allstates) do
+            state.show = false
+            state.changed = true
         end
 
         return true
